@@ -9,9 +9,17 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+main {
+  height: 800px;
+}
 
 i {
   font-size: 30px;
+}
+
+.boton:hover {
+  cursor: pointer;
+  background-color: #4e4a4a;
 }
 
 .selected-dark {
@@ -28,4 +36,26 @@ i {
 
 .white {
   background-color: rgb(227, 227, 227);
+}
+
+.task-container-dark {
+  background: #4e4a4a;
+}
+
+.task-container-white {
+  background: #e7e7e7;
+}
+
+.background {
+  background-color: #dfe0e0;
+}
+
+.container-task {
+  overflow-y: auto; /* Solo activa el scroll vertical */
+  overflow-x: hidden;
+  height: 600px;
+}
+
+.task:hover {
+  cursor: pointer;
 }

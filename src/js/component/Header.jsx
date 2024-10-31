@@ -5,8 +5,8 @@ const Header = (props) => {
     <div
       className={
         props.tema === "dark"
-          ? "row pt-3 bg-black text-white border-bottom border-3 border-white"
-          : "row pt-3 bg-white text-white border-bottom border-3 border-dark"
+          ? "row pt-3 bg-black text-white border-bottom border-3 border-white m-0"
+          : "row pt-3 background text-white border-bottom border-3 border-dark m-0"
       }
     >
       <div className="col-6 col-md-8 col-lg-10 fw-bold fs-1">
