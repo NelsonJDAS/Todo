@@ -12,13 +12,13 @@ const Footer = (props) => {
       <div className="row mt-2 m-0 p-0">
         <div className="col-md-6 col-12 text-center">
           <p>
-            Creado por
+            Created By
             <span className="fw-bold"> Nelson De Abreu</span>
           </p>
         </div>
         <div className="col-md-6 col-12 text-center fw-bold">
           <p>
-            Contacto
+            Contact
             <a
               href="https://www.linkedin.com/in/nelson-de-abreu-ab87042b6/"
               className="text-primary text-decoration-none px-1"
@@ -39,7 +39,7 @@ const Footer = (props) => {
       </div>
       <div className="row m-0 p-0">
         <div className="col-12 text-center">
-          <p className="fw-bold">Web con fin educativo</p>
+          <p className="fw-bold">Website for educational purposes</p>
         </div>
       </div>
     </footer>
