@@ -16,7 +16,7 @@ const Main = (props) => {
       console.log(error);
     }
   }),
-    [];
+    [Main];
 
   const EventKey = (event) => {
     return event.key === "Enter" ? AddTask(Id, false, Input) : "";
@@ -112,10 +112,12 @@ const Main = (props) => {
           if (respuesta.ok) {
             const usuario = await respuesta.json();
             return usuario;
+          } else {
           }
         })
-        .then((datos) => {
-          SetTodoTask(datos.todos);
+        .then(async (datos) => {
+          const todo = await datos.todos;
+          SetTodoTask(todo);
         });
     } catch (error) {
       console.error(error);
@@ -153,7 +155,7 @@ const Main = (props) => {
                     ? "form-control rounded-0 w-100 py-3 rounded-start text-center fw-bold bg-black text-white border border-white"
                     : "form-control rounded-0 w-100 py-3 rounded-start text-center fw-bold task-container-white border border-dark"
                 }
-                placeholder="Introduce tu tarea aqui!!!"
+                placeholder="Put your task here!!!"
                 onChange={handleElementoString}
                 ref={inputRef}
                 onKeyDown={EventKey}
@@ -188,7 +190,7 @@ const Main = (props) => {
                 done={elem.is_done}
                 id={elem.id}
                 TodoText={elem.label}
-                idWeb={Id}
+                idWeb={TodoTask[0].id - 1}
                 tema={props.tema}
               />
             );
