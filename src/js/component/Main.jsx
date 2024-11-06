@@ -16,7 +16,7 @@ const Main = (props) => {
       console.log(error);
     }
   }),
-    [Main];
+    [];
 
   const EventKey = (event) => {
     return event.key === "Enter" ? AddTask(Id, false, Input) : "";
@@ -27,30 +27,7 @@ const Main = (props) => {
   };
 
   //crear el usuario
-  async function CrearUsuario(nombre) {
-    const usuario = {
-      name: nombre,
-      id: 250,
-    };
-    try {
-      const respuesta = fetch(
-        `https://playground.4geeks.com/todo/users/${nombre}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(usuario),
-        }
-      );
-      if (respuesta.ok) {
-        const usuario = await respuesta.json();
-      } else {
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  
 
   // restricciones y agregar la tarea al servidor
   const AddTask = (ID, DONE, TASK) => {
@@ -115,8 +92,8 @@ const Main = (props) => {
           } else {
           }
         })
-        .then(async (datos) => {
-          const todo = await datos.todos;
+        .then((usuario) => {
+          const todo = usuario.todos;
           SetTodoTask(todo);
         });
     } catch (error) {
@@ -140,7 +117,7 @@ const Main = (props) => {
           : "bg-white text-dark m-0"
       }
     >
-      <Toaster richColors position="top-center" />
+      <Toaster richColors position="top-left" />
       <div className="container-fluid">
         <div className="row text-center py-3">
           <h2 className="fw-bold text-warning">TASK</h2>
@@ -192,6 +169,7 @@ const Main = (props) => {
                 TodoText={elem.label}
                 idWeb={TodoTask[0].id - 1}
                 tema={props.tema}
+                funcion={AgregarTodos}
               />
             );
           })}

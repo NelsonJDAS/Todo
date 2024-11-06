@@ -16,6 +16,7 @@ const Task = (props) => {
     } catch (error) {
       console.log("todo eliminado");
     }
+    props.funcion("usuario");
   };
 
   const MarcarListo = (Estado, ID) => {
@@ -36,6 +37,7 @@ const Task = (props) => {
       console.log(error);
     }
     console.log(todo);
+    props.funcion("usuario");
   };
 
   return (
